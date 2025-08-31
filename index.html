@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALL IN ONE SHOPPING</title>
+<link rel="stylesheet" href="style.css">
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <img src="images/logo.png" alt="Logo" class="logo">
+    <h1>ALL IN ONE SHOPPING</h1>
+    <p>Access all major shopping websites from one place!</p>
+  </div>
+</header>
+
+<!-- Category Filter -->
+<section class="category-filter">
+  <div class="container">
+    <h2>Filter Stores by Category</h2>
+    <select id="categorySelect">
+      <option value="all">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="fashion">Fashion</option>
+      <option value="groceries">Groceries</option>
+      <option value="beauty">Beauty</option>
+      <option value="home">Home Decor</option>
+    </select>
+  </div>
+</section>
+
+<!-- Search -->
+<section class="search-section">
+  <div class="container">
+    <h2>Search Across Selected Stores</h2>
+    <input type="text" id="productSearch" placeholder="Enter product name..." />
+    <button onclick="searchFilteredStores()">Search</button>
+  </div>
+</section>
+
+<!-- Stores -->
+<section class="buttons">
+  <div class="container">
+    <h2>Top Shopping Websites</h2>
+    <div class="button-grid">
+      <!-- Store buttons with favorite hearts -->
+      <!-- Example -->
+      <a href="https://www.amazon.in" target="_blank" class="store-button" data-category="electronics">
+        <img src="images/amazon.png" alt="Amazon">
+        <span>Amazon</span>
+        <span class="favorite" onclick="toggleFavorite(event,'Amazon','https://www.amazon.in')">❤</span>
+      </a>
+      <a href="https://www.flipkart.com" target="_blank" class="store-button" data-category="electronics">
+        <img src="images/flipkart.png" alt="Flipkart">
+        <span>Flipkart</span>
+        <span class="favorite" onclick="toggleFavorite(event,'Flipkart','https://www.flipkart.com')">❤</span>
+      </a>
+      <!-- Add all 15 stores in same format -->
+    </div>
+  </div>
+</section>
+
+<!-- Search Results -->
+<section class="search-results">
+  <div class="container">
+    <h2>Search Results</h2>
+    <div id="resultsContainer"><p>Enter a product name and select a category to view results here.</p></div>
+  </div>
+</section>
+
+<!-- Favorites -->
+<section class="favorites-section">
+  <div class="container">
+    <h2>Your Favorite Stores</h2>
+    <div id="favoritesContainer"><p>No favorites added yet. Click the heart on a store to save it!</p></div>
+  </div>
+</section>
+
+<!-- Login -->
+<section class="login-section">
+  <div class="container">
+    <h2>Login / Signup</h2>
+    <form id="loginForm">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login / Signup</button>
+    </form>
+  </div>
+</section>
+
+<!-- Ads Section -->
+<section class="ads">
+  <div class="container">
+    <h2>Sponsored Ads</h2>
+    <div class="ad-box"><p>Ad Space - Integrate Google AdSense here</p></div>
+  </div>
+</section>
+
+<!-- Developer Info -->
+<section class="developer">
+  <div class="container">
+    <h2>About the Developer</h2>
+    <p>Hello! I’m Devansh Mishra, the developer of ALL IN ONE SHOPPING. This platform aggregates 15+ major online shopping sites with features like category filters, embedded search results, animated store buttons with logos and favorites, responsive design, login using Firebase Authentication, ad space, and more. The website aims to provide users with a seamless shopping experience, allowing access to multiple e-commerce platforms from a single interface. Future updates will include personalized recommendations, notifications for deals, and additional stores. The main goal is convenience, speed, and an intuitive user interface for all users, including mobile and desktop users.</p>
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2025 ALL IN ONE SHOPPING | Developed by Devansh Mishra</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
